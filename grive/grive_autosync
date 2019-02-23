@@ -1,0 +1,8 @@
+#!/bin/sh
+
+docker run --mount type=bind,source=/home/YOURUSERNAME/Documents,target=/grive-source/sync-folder grive-docker grive -p /grive-source/sync-folder/GDrive/ -l /grive-source/sync-folder/grive.log
+
+echo "Set Owner"
+chown -R YOURUSERNAME: ./GDrive/
+echo "Allow RW"
+chmod -R +rw ./GDrive/
